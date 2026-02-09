@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,174 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Valentine.css */
+
+/* ---------- Page layout ------------------------------------- */
+.valentine-wrapper {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 3rem;
+}
+
+/* ---------- Buttons ---------------------------------------- */
+.buttons button {
+  margin: 0 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 200ms ease-out;
+  /* Only the Yes button gets this */
+}
+
+.yes-btn {
+  /* extra specificity if you need to tweak it later */
+}
+
+.no-btn {}
+
+/* ---------- Confirmation message ---------------------------- */
+.confirm-msg {
+  margin-top: 1rem;
+  color: #c00;
+  font-weight: bold;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* ---------- Confetti --------------------------------------- */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.heart {
+  font-size: 2rem;
+  position: absolute;
+  animation: float 4s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -20%) rotate(0deg);
+    top: -10%;
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, 120%) rotate(360deg);
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  /* darker background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlayFadeIn 0.3s ease forwards;
+}
+
+.modal-overlay.fade-out {
+  animation: overlayFadeOut 0.3s ease forwards;
+}
+
+
+/* Modal */
+.modal {
+  background: #181818;
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-open {
+  animation: bounceIn 0.45s cubic-bezier(.34, 1.56, .64, 1) forwards;
+}
+
+.modal-close {
+  animation: fadeOutScale 0.3s ease forwards;
+}
+
+/* Animations */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }

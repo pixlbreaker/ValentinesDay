@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import heart from '/heart.svg'
+import flower from '/flower.svg'
 import './App.css'
-import YesButton from './YesButton'
-import NoButton from './NoButton'
+import Valentine from './Valentine'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,13 +9,10 @@ function App() {
   return (
     <>
       <div>
-        <img src={heart} className="logo" alt="Heart" />
+        <img src={flower} className="logo" alt="Flower" />
       </div>
-      <h1>Will You be my Valentine?</h1>
       <div className="card">
-        <YesButton></YesButton>
-        <NoButton></NoButton>
-
+        <Valentine></Valentine>
       </div>
     </>
   )
