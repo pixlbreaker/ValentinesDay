@@ -63,12 +63,6 @@
   /* Only the Yes button gets this */
 }
 
-.yes-btn {
-  /* extra specificity if you need to tweak it later */
-}
-
-.no-btn {}
-
 /* ---------- Confirmation message ---------------------------- */
 .confirm-msg {
   margin-top: 1rem;
